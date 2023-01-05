@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang=" en ">
+<head>
+    <meta charset="UTF-8">
+    <title>Car navigation webpage</title>
+    <style>
+        body
+        {
+            background: #d9d9e0;
+            margin: 0;
+            padding: 0;
+        }
+        .container_1
+        {
+            width: 80vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(-100%,50%) rotate(-90deg);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 15px;        
+        }
+        input[type = "range"]
+        {
+            width : 85%;
+            -webkit-appearance: none;
+            height: 5px;
+            position: relative;
+            background-color:rgb(2, 141, 9);
+            border-radius: 5px;
+            outline: none; 
+        }
+        input[type= 'range']::-webkit-slider-thumb
+        {
+            -webkit-appearance: none;
+            background-color:aquamarine;
+            height: 25px;
+            width: 25px;
+            border-radius: 5px;
+            outline: none
+        }
+        #number_1
+        {
+            background-color: #ffd901;
+            height: 40px;
+            width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family:'Courier New', Courier, monospace;
+            font-weight: 600;
+            font-size: 20px;
+            border-radius: 3px;
+            transform: rotate(90deg);
+        }
+        #number_1:before
+        {
+            position:absolute;
+            content: "";
+            height: 0;
+            width: 0;
+            border-bottom: 10px solid #ffd901;
+            border-left: 8px solid transparent;
+            top: -9px;
+        }
+        .container_2
+        {
+            width: 80vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(00%,50%) rotate(-90deg);
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 15px;        
+        }
+        #number_2
+        {
+            background-color: #ffd901;
+            height: 40px;
+            width: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family:'Courier New', Courier, monospace;
+            font-weight: 600;
+            font-size: 20px;
+            border-radius: 3px;
+            transform: rotate(90deg);
+        }
+        #number_2:before
+        {
+            position:absolute;
+            content: "";
+            height: 0;
+            width: 0;
+            border-bottom: 10px solid #ffd901;
+            border-left: 8px solid transparent;
+            top: -9px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container_1">
+        <div id = "number_1">0</div>
+        <input type ="range" min ="-180" max = "180" value = "0" id = "slider">
+    </div>
+    <script>
+        var slider = document.getElementById("slider")
+        var number = document.getElementById("number_1")
+        slider.oninput = function()
+        {
+            number.innerHTML = slider.value;
+        }
+    </script>
+    <div class="container_2">
+        <div id = "number_2">0</div>
+        <input type ="range" min ="-180" max = "180" value = "0" id = "slider">
+    </div>
+    <script>
+        var slider = document.getElementById("slider")
+        var number = document.getElementById("number_2")
+        slider.oninput = function()
+        {
+            number.innerHTML = slider.value;
+        }
+    </script>
+</body>
+</html>
